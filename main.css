@@ -280,6 +280,46 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-top: 100px;
 }
 
+.kaime{
+    font-size: 1.4rem;
+    color: #4B5D92;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+}
+
+.flex_block1{
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.block1{
+    display: flex;
+    vertical-align: center;
+    justify-content: center;
+    flex-direction:row;
+    align-items: center;
+
+}
+
+
+.number_view{
+    font-size: 1.6rem;
+    margin-right: 10px;
+}
+
+.atai{
+    font-size: 1.2rem;
+}
+
+
 @media only screen and (max-width:700px) {
     .body_part{
         max-width: 90%;
@@ -311,6 +351,16 @@ input[type="number"]::-webkit-inner-spin-button {
         width: 90%;
         height: 50px;
         padding-left: 20px;
+        border-radius: 10px;
+    }
+
+    .flex_block1{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px 50px;
         border-radius: 10px;
     }
     }

@@ -38,7 +38,7 @@
     </div>
 
    <a class="button_main" href="train_name.php">トレーニングを始める</a>
-   <a class="button_sub" href="#">記録を見る</a>
+   <a class="button_sub" href="list.php">記録を見る</a>
    <a href="logout.php" class="logout">ログアウト</a>
 
 

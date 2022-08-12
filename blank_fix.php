@@ -26,10 +26,11 @@
 </div>        
 
 <?php
+session_start();
+$user=$_SESSION['mail'];
 try{
 $part=$_POST['part'];
 $date=date('y-m-d');
-$id='IDが入る';
 $kg1=$_POST['kg'];
 $kg2=$_POST['kg2'];
 $kg3=$_POST['kg3'];
@@ -44,7 +45,7 @@ $kai5=$_POST['kai5'];
 
 $dbh=new PDO('mysql:dbname=torekiro;charset=utf8;host=localhost','root','root');
 $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-$sql="UPDATE trainning SET kg1='$kg1',kg2='$kg2',kg3='$kg3',kg3='$kg3',kg4='$kg4',kg5='$kg5',kai1='$kai1',kai2='$kai2',kai3='$kai3',kai4='$kai4',kai5='$kai5' WHERE part='$part' AND date='$date' AND id='$id'";
+$sql="UPDATE trainning SET kg1='$kg1',kg2='$kg2',kg3='$kg3',kg3='$kg3',kg4='$kg4',kg5='$kg5',kai1='$kai1',kai2='$kai2',kai3='$kai3',kai4='$kai4',kai5='$kai5' WHERE part='$part' AND date='$date' AND id='$user'";
 $stmt=$dbh->prepare($sql);
 $stmt->execute();
 $dbh=null;

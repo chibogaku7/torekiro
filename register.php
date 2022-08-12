@@ -28,7 +28,7 @@
 
             <form  class="form_flex" method="post" action="register_done.php">
                 <input class="form_register" type="text"  name="mail" placeholder="ユーザー名を入力">
-                <input class="form_register"  type="text" name="password" placeholder="パスワードを入力">
+                <input class="form_register"  type="password" name="password" placeholder="パスワードを入力">
                 <input class="button_main" type="submit" value="登録する">
             </form>
 

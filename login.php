@@ -33,7 +33,7 @@
 
         <form  class="form_flex" method="post" action="login_check.php">
                 <input class="form_register" type="text"  name="mail" placeholder="ユーザー名を入力">
-                <input class="form_register"  type="text" name="password" placeholder="パスワードを入力">
+                <input class="form_register"  type="password" name="password" placeholder="パスワードを入力">
                 <input class="button_main" type="submit" value="ログインする">
             </form>
 

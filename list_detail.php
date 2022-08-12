@@ -39,10 +39,11 @@
 try{
 
     $user=$_SESSION['mail'];
+    $date=$_GET['date'];
 
     $dbh=new PDO('mysql:dbname=torekiro;charset=utf8;host=localhost','root','root');
     $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    $sql="SELECT date from trainning where id='$user'"; 
+    $sql="SELECT part from trainning where date='$date' AND id='$user' "; 
     $stmt=$dbh->prepare($sql);
     $stmt->execute();
     $dbh=null;
@@ -55,18 +56,64 @@ try{
     if($rec==false){
         break;
     }
-    $date=$rec['date'];
+    $detail=$rec['part'];
+
+
+    if($detail=='benchpress'){
+        $detail1='ベンチプレス';
+    }
+    if($detail=='chestpress'){
+        $detail1='チェストプレス';
+    }
+    if($detail=='dumbbellfly'){
+        $detail1='ダンベルフライ';
+    }
+    if($detail=='latpulldown'){
+        $detail1='ラットプルダウン';
+    }
+    if($detail=='deadlift'){
+        $detail1='デットリフト';
+    }
+    if($detail=='chinning'){
+        $detail1='チンニング';
+    }
+    if($detail=='armcurl'){
+        $detail1='アームカール';
+    }
+    if($detail=='sideraise'){
+        $detail1='サイドレイズ';
+    }
+    if($detail=='shoulderpress'){
+        $detail1='ショルダープレス';
+    }
+    if($detail=='frontraize'){
+        $detail1='フロントレイズ';
+    }
+    if($detail=='squat'){
+        $detail1='スクワット';
+    }
+    if($detail=='legpress'){
+        $detail1='レッグプレス';
+    }
+    if($detail=='legextension'){
+        $detail1='レッグレクステンション';
+    }
+    if($detail=='other'){
+        $detail1='その他';
+    }
   
     print '
     <div class="part_detail_wrapper">
-    <a href="list_detail.php?date='.$date.'" class="part_detail">
-    <p class="detail_title">'.$date.'</p>
+    <a href="list_detail_detail.php?part='.$detail.'&date='.$date.'" class="part_detail">
+    <p class="detail_title">'.$detail1.'</p>
     <div class="arrow"></div>
      </a>
     </div>
     
-    <a href="index.php" class="button_main">戻る</a>
-';
+    <a href="list.php" class="button_main">戻る</a>
+
+    
+    ';
      }
 
 
