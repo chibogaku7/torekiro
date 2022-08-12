@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+<<<<<<< HEAD
         <title>TOREKIRO1</title>
+=======
+        <title>TOREKIROtest</title>
+>>>>>>> bfb1f9e436d7f94d3b35a31ad04b95ec9251141c
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <link rel="stylesheet" href="main.css">
