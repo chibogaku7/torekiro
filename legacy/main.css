@@ -1,0 +1,372 @@
+body{
+    background-color: #EBECF0;
+}
+
+.head{
+    background-color: #738ACD;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+}
+
+
+
+
+.head_title{
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.body_part{
+    max-width: 800px;
+    margin: 50px auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 4%;
+
+}
+
+.body_part_card{
+    background-color: #fff;
+    text-align: center;
+    padding: 15px;
+    width: 48%;
+    border-radius: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.body_part_card:hover{
+    background-color: #E3F5FF;
+}
+
+
+.body_part_img{
+    width: 50px;
+}
+
+.body_part_text{
+    color: #4B5D92;
+    font-weight: bold;
+    font-size: 1.4rem;
+
+}
+
+
+.part_detail_wrapper{
+    margin-top: 30px;
+}
+
+.part_detail{
+    background-color: #fff;
+    display: flex;
+    padding: 30px 20px;
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.part_detail:hover{
+    background-color: #E3F5FF;
+}
+
+
+
+.detail_title{
+    font-weight: bold;
+    width: 550px;
+    text-decoration: none;
+    color: #4B5D92;
+}
+
+
+
+.arrow{
+    position: relative;
+    display: inline-block;
+  }
+  
+  .arrow::before{
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 0px;
+    border-top: solid 2px #5bc0de;
+    border-right: solid 2px #5bc0de;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -4px;
+  }
+
+
+.form{
+    background-color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    width: 700px;
+    margin: 30px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.form_set{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_text{
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #4B5D92;
+    margin-bottom: 10px;
+}
+
+
+.form_input{
+    margin-bottom: 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+  -webkit-appearance: none; 
+} 
+
+
+.kg{
+    border: #4B5D92 solid 1px;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.train_text{
+    margin-left: 20px;
+    font-size: 1.2rem;
+}
+
+.submit_wrap{
+    text-align: center;
+}
+.submit{
+    padding: 10px 20px;
+    background-color: #4B5D92;
+    color: #fff;
+    width: 300px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.submit2{
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #4B5D92;
+    width: 300px;
+    border-radius: 20px;
+    text-align: center;
+    border: #4B5D92 solid 2px;
+}
+
+.button_main{
+    display: block;
+    padding: 10px 20px;
+    background-color: #4B5D92;
+    color: #fff;
+    width: 300px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 30px auto;
+}
+
+
+.button_sub{
+    display: block;
+    padding: 10px 20px;
+    background-color: #fff;
+    font-weight: bold;
+    color: #4B5D92;
+    width: 300px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 30px auto;
+    border: #4B5D92 2px solid;
+}
+
+.main_page{
+    text-align: center;
+}
+
+.logo{
+    margin: 100px auto 30px auto;
+}
+
+.main_text{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.title{
+    font-size: 3.0rem;
+    font-weight: bold;
+    color:#4B5D92;
+
+}
+
+.sub_title{
+    font-size: 1rem;
+    font-weight: bold;
+    color:#868A9B;
+}
+
+@media only screen and (max-width:700px) {
+    .body_part{
+        max-width: 90%;
+        margin: 50px auto 0 auto;
+    
+    }
+
+    .part_detail{
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .detail_title{
+        width: 95%;
+    }
+    
+    .form{
+        width: 90%;
+        margin-bottom: 50px;
+    }
+    }
+
+
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	top:-120%;
+    left:0;
+	width:100%;
+    height: 100vh;/*ナビの高さ*/
+	background: #4B5D92;
+    /*動き*/
+	transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    top: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+	color: #fff;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+	
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #333;
+  	width: 45%;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
