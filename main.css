@@ -255,6 +255,31 @@ input[type="number"]::-webkit-inner-spin-button {
 
 }
 
+.logout{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 50px auto;
+}
+
+.header_menu{
+    color: #fff;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.header_menu a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.title_sub{
+    font-size: 2.0rem;
+    color: #4B5D92;
+    text-align: center;
+    margin-top: 100px;
+}
+
 @media only screen and (max-width:700px) {
     .body_part{
         max-width: 90%;

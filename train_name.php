@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
+        <?php
+        session_start();
+        $user=$_SESSION['mail'];
+
+        ?>
     <div class="openbtn"><span></span><span></span><span></span></div>
             <nav id="g-nav">
             <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
@@ -18,12 +23,12 @@
             </div>
             </nav>
 
-
               <?php
               date_default_timezone_set('Asia/Tokyo');
               ?>
 
        <div class="head">
+            <div class="header_menu"><a href="index.php">HOME</a></div>
             <p class="head_title"><?PHP print date("Y-n-j") ?></p>
         </div>
 
@@ -33,11 +38,10 @@
 
             try{
                 $date=date('y-m-d');
-                $id='IDが入る';
 
                 $dbh=new PDO('mysql:dbname=torekiro;charset=utf8;host=localhost','root','root');
                 $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-                $sql="SELECT part from trainning where date='$date' AND id='$id'"; 
+                $sql="SELECT part from trainning where date='$date' AND id='$user'"; 
                 $stmt=$dbh->prepare($sql);
                 $stmt->execute();
                 $dbh=null;

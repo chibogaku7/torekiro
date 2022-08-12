@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
+
     <div class="openbtn"><span></span><span></span><span></span></div>
             <nav id="g-nav">
             <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
@@ -25,10 +26,11 @@
 <p class="head_title">登録が完了しました</p>
 </div>        
 <?php
+session_start();
+$user=$_SESSION['mail'];
 try{
 $part=$_POST['part'];
 $date=date('y-m-d');
-$id='IDが入る';
 $kg1=$_POST['kg'];
 $kg2=$_POST['kg2'];
 $kg3=$_POST['kg3'];
@@ -42,7 +44,7 @@ $kai5=$_POST['kai5'];
 
 $dbh=new PDO('mysql:dbname=torekiro;charset=utf8;host=localhost','root','root');
 $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-$sql="INSERT into trainning (date,id,part,kg1,kg2,kg3,kg4,kg5,kai1,kai2,kai3,kai4,kai5)VALUES('$date','$id','$part','$kg1','$kg2','$kg3','$kg4','$kg5','$kai1','$kai2','$kai3','$kai4','$kai5')";
+$sql="INSERT into trainning (date,id,part,kg1,kg2,kg3,kg4,kg5,kai1,kai2,kai3,kai4,kai5)VALUES('$date','$user','$part','$kg1','$kg2','$kg3','$kg4','$kg5','$kai1','$kai2','$kai3','$kai4','$kai5')";
 $stmt=$dbh->prepare($sql);
 $stmt->execute();
 $dbh=null;

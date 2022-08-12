@@ -20,31 +20,54 @@
             </nav>
 
             <div class="head">
-                <p class="head_title">新規会員登録が完了しました。</p>
+                <p class="head_title">新規会員登録</p>
             </div>        
 
             <?php
+            if($_POST['mail']!=="" || $_POST['password']==""){
+                print '<p class="title_sub">メールアドレス、パスワードが入力されていません。</p>';
+                print '<a class="button_main" href="login.php">戻る</a>';
+            }else{
+
+
             $mail=$_POST['mail'];
-            $password=$_POST['password'];
-            $password=md5($password);
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+      
+
 
 
         try{
             $dbh=new PDO('mysql:dbname=torekiro;charset=utf8;host=localhost','root','root');
             $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-            $sql="INSERT into login (mail,password)VALUES('$mail','$password')";
-            $stmt=$dbh->prepare($sql);
+
+
+            $sql = "SELECT * FROM login WHERE mail ='$mail'";
+            $stmt = $dbh->prepare($sql);
+    
             $stmt->execute();
+            $member = $stmt->fetch();
+
+            $membercheck=$member['mail'];
+
+            
+            if ($membercheck === $mail) {
+                print '<p class="title_sub">同じユーザー名が存在します。</p>';
+                print '<a class="button_main" href="login.php">戻る</a>';
+            }else{
+                $sql="INSERT into login (mail,password)VALUES('$mail','$password')";
+                $stmt=$dbh->prepare($sql);
+                $stmt->execute();
+                print '<p class="title_sub">登録が完了しました</p>';
+                print '<a class="button_main" href="login.php" class="button_main">ログイン画面へ</a>';
+            }
+   
             $dbh=null;
 
         }
         catch(Exception $e){
             print '失敗しました';
         }
-
-        print '<a href="login.php" class="button_main">ログイン画面へ</a>';
-
-
+    }
             ?>
 
 

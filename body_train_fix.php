@@ -77,11 +77,12 @@
                 </div>';
 
                     $date=date('y-m-d');
-                    $id='IDが入る';
+                    session_start();
+                    $user=$_SESSION['mail'];
 
                     $dbh=new PDO('mysql:dbname=torekiro;charset=utf8;host=localhost','root','root');
                     $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-                    $sql="SELECT * from trainning where date='$date' AND id='$id' AND part='$detail'"; 
+                    $sql="SELECT * from trainning where date='$date' AND id='$user' AND part='$detail'"; 
                     $stmt=$dbh->prepare($sql);
                     $stmt->execute();
                     $dbh=null;
