@@ -24,8 +24,12 @@
             </div>        
 
             <?php
-            if($_POST['mail']!=="" || $_POST['password']==""){
-                print '<p class="title_sub">メールアドレス、パスワードが入力されていません。</p>';
+                   error_reporting(0);
+                   include "Warning.php";
+
+                   
+            if($_POST['mail']=="" || $_POST['password']==""){
+                print '<p class="title_sub">ユーザー名、パスワードが入力されていません。</p>';
                 print '<a class="button_main" href="login.php">戻る</a>';
             }else{
 
