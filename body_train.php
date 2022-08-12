@@ -11,9 +11,9 @@
             <nav id="g-nav">
             <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
             <ul>
-            <li><a href="index.php">HOME</a></li> 
-            <li><a href="train_name.php">記録する</a></li> 
-            <li><a href="kiroku.php">記録を見る</a></li> 
+            <li><a href="./index.php">HOME</a></li> 
+            <li><a href="./train_name.php">記録する</a></li> 
+            <li><a href="./kiroku.php">記録を見る</a></li> 
             </ul>
             </div>
             </nav>
@@ -112,8 +112,7 @@
  
 
 
-  
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="main.js"></script>
+        <script src="./main.js"></script>
     </body>
 </html>
