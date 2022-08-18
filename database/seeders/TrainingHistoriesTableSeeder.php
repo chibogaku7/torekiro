@@ -14,7 +14,7 @@ class TrainingHistoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $trainingHistories = [
+        $training_histories = [
             ['user_id' => '1',
             'menu_id' => 'dead_lift',
             'unit_record' => '20',
@@ -69,7 +69,7 @@ class TrainingHistoriesTableSeeder extends Seeder
             ];
 
     // 登録
-    foreach($trainingHistories as $trainingHistory) {
+    foreach($training_histories as $trainingHistory) {
     \App\Models\TrainingHistory::create($trainingHistory);
     }
     }

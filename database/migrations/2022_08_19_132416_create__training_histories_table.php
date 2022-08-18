@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('TrainingHistories', function (Blueprint $table) {
+        Schema::create('training_histories', function (Blueprint $table) {
             $table->increments('training_id')->unique();
-            $table->string('user_id',30);            
-            $table->foreign('user_id',30)->references('user_id')->on('user');
-            $table->string('menu_id',30);
-            $table->foreign('menu_id',30)->references('menu_id')->on('menus');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->string('menu_id');
+            $table->foreign('menu_id')->references('menu_id')->on('menus');
             $table->decimal('unit_record', 5, 2);
             $table->decimal('length_record', 5, 2);
             $table->timestamps();

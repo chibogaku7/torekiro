@@ -21,11 +21,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        // BooksTableSeederを読み込むように指定
-        $this->call(UserSeeder::class);
+  
         $this->call(PartsTableSeeder::class);
         $this->call(MenusTableSeeder::class);
         $this->call(TrainingHistoriesTableSeeder::class);
+        $this->call(UserSeeder::class);
         
     }
 }
