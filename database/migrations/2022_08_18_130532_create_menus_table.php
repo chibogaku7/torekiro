@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('part_id',30);
             $table->foreign('part_id',30)->references('part_id')->on('parts');;
             $table->enum('unit', ['kg', 'km/h']); 
-            $table->enum('length', ['回', '分']); 
             $table->timestamps();
         });
     }

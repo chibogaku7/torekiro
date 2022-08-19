@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->string('menu_id');
             $table->foreign('menu_id')->references('menu_id')->on('menus');
-            $table->decimal('unit_record', 5, 2);
-            $table->decimal('length_record', 5, 2);
+            $table->decimal('strength', 5, 2);
+            $table->decimal('times', 5, 2);
             $table->timestamps();
         });
     }
