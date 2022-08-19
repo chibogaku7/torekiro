@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('parts', function (Blueprint $table) {
-            $table->string('part_id',30)->unique();
-            $table->string('part_name',30); 
-            $table->timestamps();        
+        Schema::create('menus', function (Blueprint $table) {
+            $table->string('menu_id',30)->unique();
+            $table->string('menu_name',30);
+            $table->string('part_id',30);
+            $table->foreign('part_id')->references('part_id')->on('parts');
+            $table->enum('unit',['km/h','kg']);
         });
     }
 
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parts');
+        Schema::dropIfExists('menus');
     }
 };
