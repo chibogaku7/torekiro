@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('parts', function (Blueprint $table) {
-            $table->string('part_id',30)->unique();
-            $table->string('part_name',30);
+            $table->integer('part_id')->unique();
+            $table->string('part_name');
         });
     }
 

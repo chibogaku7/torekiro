@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('training_histories', function (Blueprint $table) {
-            $table->increments('training_id');
+        Schema::create('sets', function (Blueprint $table) {
+            $table->increments('training_id')->unique();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('user_id')->on('users');
-            $table->string('menu_id',30);
-            $table->foreign('menu_id')->references('memu_id')->on('menus');
+            $table->integer('menu_id');
+            $table->foreign('menu_id')->references('menu_id')->on('menus');
             $table->dateTime('created_at');
         });
     }

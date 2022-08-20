@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('menus', function (Blueprint $table) {
-            $table->string('menu_id',30)->unique();
-            $table->string('menu_name',30);
-            $table->string('part_id',30);
+            $table->integer('menu_id')->unique();
+            $table->string('menu_name');
+            $table->integer('part_id');
             $table->foreign('part_id')->references('part_id')->on('parts');
             $table->enum('unit',['km/h','kg']);
         });

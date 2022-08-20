@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('set_details', function (Blueprint $table) {
-            $table->increments('set_id');
-            $table->string('training_id');
-            $table->foreign('training_id')->references('training_id')->on('training_histories');
-            $table->integer('repeat',2);
+        Schema::create('subsets', function (Blueprint $table) {
+            $table->increments('set_id')->unique();
+            $table->integer('training_id')->unsigned();
+            $table->foreign('training_id')->references('training_id')->on('sets');
+            $table->integer('repeat');
             $table->decimal('strength',5,2);
             $table->decimal('times',5,2);
         });
