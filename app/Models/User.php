@@ -9,4 +9,9 @@ class User extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    public function export(){
+        
+    }
+
 }
