@@ -15,9 +15,9 @@
         </div>
 
 
-        <div class="login_form_background">
+        <div id="login_form_background">
 
-            <form method="post" action="#" class="login_form_wrapper">
+            <form method="post" action="/login" class="login_form_wrapper">
                 <div class="login_form_text_wrapper">
                     <input type="text" placeholder="ニックネームを入力" name="nickname" class="login_form_text">
                     <input type="password" placeholder="パスワードを入力" name="password" class="login_form_text">
@@ -25,7 +25,7 @@
                 <input type="submit" value="ログイン" class="login_form_submit">
             </form>
             
-            <a href="#" class="button_text">
+            <a href="/user/register" class="button_text">
                 <p>新規会員登録する　>></p>
             </a>
 
