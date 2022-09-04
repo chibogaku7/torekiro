@@ -8,6 +8,61 @@ body{
     height: 100%;
 }
 
+.nav_wrapper{
+    background-color: #333;
+    height: 40px;
+}
+
+.nav{
+    display: flex;
+    width: 768px;
+    margin:0 auto;
+    padding: 7px 0;
+    justify-content: center;
+}
+
+.nav_img{
+    width: 30px;
+}
+
+.nav_text{
+    color: #fff;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+
+.title{
+    font-size: 1.6rem;
+    color: #444;
+}
+
+.text{
+    font-size: 1.2rem;
+    color: #888888;
+}
+
+.button_1{
+    margin: 0 auto;
+    display: block;
+    background-color: #333;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-align: center;
+    color: white;
+    width: 335px;
+    line-height: 50px;
+    border-radius: 5px;
+}
+
+
+.body_wrapper{
+    width: 335px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+
 .main_wrapper{
     text-align: center;
     display: flex;
@@ -106,4 +161,23 @@ body{
     margin-bottom: 35px;
     border-radius: 1px;
     border: #FF9090 1px solid;
+}
+
+.validation{
+    color: #FF9090;
+}
+
+
+
+@media screen and (max-width:768px) { 
+    /*　画面サイズが480pxからはここを読み込む　*/
+    .nav{
+        display: flex;
+        width: 100%;
+        margin:0 auto;
+        padding: 7px 0;
+        justify-content: left;
+    }
+
+
 }
