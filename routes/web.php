@@ -20,6 +20,8 @@ Route::get('/',[LoginController::class,'home']);
 
 Route::get('/login',[LoginController::class,'login']);
 
-Route::post('/login',[LoginController::class,'login']);
+Route::post('/login',[LoginController::class,'postloginPage']);
 
 Route::get('/user/register',[UserController::class,'register']);
+
+Route::post('/user/register',[UserController::class,'registerDone']);

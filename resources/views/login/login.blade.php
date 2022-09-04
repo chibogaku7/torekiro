@@ -17,13 +17,32 @@
         </div>
 
 
+       
+
         <div class="login_form_background">
 
-            <p class="varidation">ニックネームとパスワードが正しくありません</p>
-            <form method="post" action="/login" class="login_form_wrapper">
+            @if (session('message'))
+            <div class="varidation">
+                {{ session('message') }}
+            </div>
+            @endif
+    
+
+            <form method="POST" action="{{url('/login')}}" class="login_form_wrapper">
+                @csrf
+                @if ($errors->first('nickname'))  
+                            <p class="validation">※{{$errors->first('nickname')}}</p>
+                            @endif
+
+
                 <div class="login_form_text_wrapper">
-                    <input type="text" placeholder="ニックネームを入力" name="nickname" class="login_form_text">
-                    <input type="password" placeholder="パスワードを入力" name="password" class="login_form_text">
+                    <div>
+                       <input type="text" placeholder="ニックネームを入力" name="nickname" class="login_form_text">
+                    </div>
+
+                    <div>
+                       <input type="password" placeholder="パスワードを入力" name="password" class="login_form_text">
+                    </div>
                 </div>
                 <input type="submit" value="ログイン" class="login_form_submit">
             </form>
