@@ -2,7 +2,9 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "format": "prettier --write resources/**/*.{js,css}",
+        "format-check": "prettier --check resources/**/*.{js,css}"
     },
     "devDependencies": {
         "axios": "^0.27",
